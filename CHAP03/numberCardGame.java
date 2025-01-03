@@ -22,7 +22,7 @@ public class numberCardGame {
             }
             maxValue = Math.max(maxValue, minInRow);
         }
-\
+
         System.out.println(maxValue);
         br.close();
     }
