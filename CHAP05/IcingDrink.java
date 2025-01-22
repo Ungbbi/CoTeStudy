@@ -42,9 +42,6 @@ public class IcingDrink {
         N = Integer.parseInt(inputs[0]);
         M = Integer.parseInt(inputs[1]);
 
-        // 방문처리 위한 Matrix
-        int[][] visited = new int [N][M];
-
         // graph 생성
         graph = new int [N][M];
         for(int i=0; i<N; i++){
