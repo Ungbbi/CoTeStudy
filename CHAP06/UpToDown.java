@@ -51,6 +51,10 @@ public class UpToDown {
             ary[i] = Integer.parseInt(br.readLine());
         }
         quickSort(ary, 0, ary.length-1);
-        System.out.println(Arrays.toString(ary));
+        int[] sol = new int[N];
+        for(int i=0;i<N;i++){
+            sol[N-(i+1)] = ary[i];
+        }
+        System.out.println(Arrays.toString(sol));
     }
 }
