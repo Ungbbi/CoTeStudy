@@ -1,7 +1,7 @@
 # CoTeStudy
 > 자주 쓰일법한 문법 및 패키지 사용 정리
 
-#### 배열 출력
+### 배열 출력
 ```JAVA
 import java.util.Arrays;
 int[] ary;
@@ -19,7 +19,34 @@ Collections.reverse(integerList);
 // 반복문이 낫다
 ```
 
-// 다익스트라 알고리즘에서의 무한 표기
+### Shortest Path
 ```JAVA
+// 다익스트라 알고리즘에서의 무한 표기
 int(1e9);
+
+// 우선순위 큐 
+import java.util.PriorityQueue;
+
+//Comparable 구현
+@Override
+public int compareTo(Student target) {
+    return this.age <= target.age ? 1 : - 1;
+}
+
+
+// Comparator 사용, Comparable은 인터페이스 Comparator는 클래스
+priorityQueue = getPriorityQueueOfStudents();
+PriorityQueue<Student> reversedPriorityQueue = new PriorityQueue<>(priorityQueue.size(), new Comparator<Student>() {
+    @Override
+    public int compare(Student p1, Student p2) {
+        return p1.age >= p2.age ? 1 : -1;
+    }
+});
+// 람다식으로
+PriorityQueue<Student> reversedPriorityQueue = new PriorityQueue<>(priorityQueue.size(),
+        (Student p1, Student p2) -> p1.age >= p2.age ? 1 : -1);
+
+// 만약 Student 클래스에 Comparable를 구현하지 않고 PriorityQueue에 넣으려고 한다면 아래와 같은 에러가 발생한다.
+Exception in thread "main" java.lang.ClassCastException: Student cannot be cast to java.lang.Comparable
+
 ```
