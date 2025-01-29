@@ -1,9 +1,11 @@
-package CHAP08;
+package CHAP08_DP;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.util.Arrays;
+
+import static java.lang.Math.min;
 
 public class efficientMonetary {
     public static void main(String[] args) throws IOException{
@@ -56,5 +58,7 @@ public class efficientMonetary {
              n++;
          }
         System.out.println(dp[M]);
+
+
     }
 }

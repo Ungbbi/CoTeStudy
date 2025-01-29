@@ -1,4 +1,4 @@
-package CHAP03;
+package CHAP03_Greedy;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

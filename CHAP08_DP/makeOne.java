@@ -1,4 +1,4 @@
-package CHAP08;
+package CHAP08_DP;
 
 import java.io.IOException;
 import java.io.InputStreamReader;

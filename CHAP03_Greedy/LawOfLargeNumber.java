@@ -1,9 +1,8 @@
-package CHAP03;
+package CHAP03_Greedy;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.StringTokenizer;
 
 // 이코테 92p
 public class LawOfLargeNumber {

@@ -1,4 +1,4 @@
-package CHAP06;
+package CHAP06_Sort;
 
 import java.io.IOException;
 import java.io.InputStreamReader;

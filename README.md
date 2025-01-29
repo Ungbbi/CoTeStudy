@@ -18,3 +18,8 @@ Collections.reverse(integerList);
 // 하지만 위 방법 너무 복잡함. 출력할때 어렵다
 // 반복문이 낫다
 ```
+
+// 다익스트라 알고리즘에서의 무한 표기
+```JAVA
+int(1e9);
+```

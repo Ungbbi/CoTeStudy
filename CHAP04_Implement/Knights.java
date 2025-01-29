@@ -1,8 +1,7 @@
-package CHAP04;
+package CHAP04_Implement;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
-import java.util.ArrayList;
 
 
 // 방법 1. 2차원 배열을 만들어서 인덱스가 있을 때, 이동 후 인덱스의 범위가 조건에 만족하면 Count

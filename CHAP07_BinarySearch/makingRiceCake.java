@@ -1,4 +1,4 @@
-package CHAP07;
+package CHAP07_BinarySearch;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
