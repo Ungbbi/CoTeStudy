@@ -13,6 +13,7 @@ public class LawOfLargeNumber {
         int M = Integer.parseInt(str[1]);
         int K = Integer.parseInt(str[2]);
 
+
         String input = br.readLine();
 
         int[] numbers = Arrays.stream(input.split(" "))

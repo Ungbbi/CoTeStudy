@@ -29,7 +29,7 @@ public class futureCity {
 
         // 연결된 두 회사의 번호를 입력받아서 테이블 갱신 ( dist는 모두 1)
         // 이번 문제에서는 단방향이 아닌 양방향이므로 둘 다 설정해준다.
-        int first,second;
+         int first,second;
          for(int i=0; i<numberOfEdge; i++){
              input = br.readLine().split(" ");
              first = Integer.parseInt(input[0]);
@@ -53,6 +53,7 @@ public class futureCity {
                 }
             }
         }
+
         // 반드시 stopOver를 거치고 (중간지점을 거치고 목적지로 향해야함)
         int sol = graph.get(1).get(stopOver) + graph.get(stopOver).get(destination);
         if(sol>=INF) System.out.println("-1");
