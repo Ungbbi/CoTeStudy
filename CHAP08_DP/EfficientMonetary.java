@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 import static java.lang.Math.min;
 
-public class efficientMonetary {
+public class EfficientMonetary {
     public static void main(String[] args) throws IOException{
          BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
          String[] inputs = br.readLine().split(" ");

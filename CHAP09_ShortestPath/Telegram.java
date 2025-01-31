@@ -6,9 +6,8 @@ import java.io.BufferedReader;
 
 import java.util.List;
 import java.util.ArrayList;
-import java.util.PriorityQueue;
 
-public class telegram {
+public class Telegram {
     static final int INF = (int) 1e9;
     public static void main (String[] args) throws IOException{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class futureCity {
+public class FutureCity {
     // 무한의 값
     static final int INF = (int) 1e9;
 

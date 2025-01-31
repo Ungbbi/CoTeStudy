@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 
 import java.util.Arrays;
-import java.util.List;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 
@@ -23,7 +22,7 @@ class Node implements Comparable<Node> {
     }
 }
 
-public class telegram_dijkstra {
+public class Telegram_dijkstra {
     static final int INF = (int) 1e9;
     static ArrayList<Node>[] nodeGraph;
 

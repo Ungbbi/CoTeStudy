@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 
 
-public class formTeam {
+public class FormTeam {
     static int[] students;
     public static int findTeam(int a){
         if(students[a] != a){

@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.util.Arrays;
 
-public class makingRiceCake {
+public class MakingRiceCake {
 
     public static Integer binarySearch(int[] riceCakes, int target, int start, int end) {
         if (start >= end) return riceCakes[start - 1];

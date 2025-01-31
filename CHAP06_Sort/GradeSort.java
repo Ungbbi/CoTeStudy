@@ -20,7 +20,7 @@ class Student{
         return this.name;
     }
 }
-public class gradeSort {
+public class GradeSort {
     public static void quickSort(Student[] students, int start, int end){
         if(start>=end) return;
         int pivot = start;
