@@ -45,8 +45,7 @@ public class telegram {
                 }
             }
         }
-        // 다익스트라
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+
 
         // 결과값 구하는 과정
         int cnt = 0;

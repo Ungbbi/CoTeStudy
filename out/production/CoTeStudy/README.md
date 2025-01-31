@@ -22,7 +22,7 @@ Collections.reverse(integerList);
 ### Shortest Path
 ```JAVA
 // 다익스트라 알고리즘에서의 무한 표기
-int(1e9);
+int INF = Integer.MAX_VALUE;
 
 // 우선순위 큐 
 import java.util.PriorityQueue;
