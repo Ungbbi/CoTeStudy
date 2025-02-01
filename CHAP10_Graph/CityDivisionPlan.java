@@ -3,9 +3,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.PriorityQueue;
 
 class Edge implements Comparable<Edge>{
@@ -45,10 +42,21 @@ public class CityDivisionPlan {
         return houses[a];
     }
     public static void unionVillage(int a, int b){
-        int x = findVillage(a);
-        int y = findVillage(b);
-        if(x<y) houses[b] = x;
-        else houses[a] = y;
+        int rootA = findVillage(a);
+        int rootB = findVillage(b);
+//         노드 (2, 3) 가 그룹 A 이고 노드 1이 그룹 B일 때 (1,2)가 서로 다른 그룹이므로 1과 2를 Union 한다면
+//         그룹B(1,2) 그룹A(3)이 된다. 하지만 노드 3또한 노드1보다 값이 크므로 노드1의 그룹으로 Union 되어야 한다.
+//         현재. 1 - 2 || 3 이다. 하지만 엣지는 1-2-3 으로 연결돼있다.
+//         왜냐하면 후에 E(1,3)이 존재할 때, 노드 1과 노드3의 그룹이 다르므로 Union이 수행되고 이 경우 Cycle이 발생하기 때문이다.
+//         따라서, 초기에 루트노드까지 그룹 변경을 시켜줘야 한다.
+        if(rootA<rootB) {houses[b] = rootA;
+            houses[rootB] = rootA;
+        }
+        else {
+            houses[a] = rootB;
+            houses[rootA] = rootB;
+
+        }
     }
 
     public static void main(String[] args) throws IOException{
@@ -78,7 +86,7 @@ public class CityDivisionPlan {
         int totalCost=0;
         while(!pq.isEmpty()){
             Edge e = pq.poll();
-            // 사이클이 없다면 (서로 다른 집합이라면)
+            // 사이클 유무 검사
             if(findVillage(e.a) != findVillage(e.b)){
                 unionVillage(e.a,e.b);
                 totalCost += e.cost;
