@@ -59,3 +59,12 @@ Exception in thread "main" java.lang.ClassCastException: Student cannot be cast 
                               .mapToInt(Integer::parseInt)  // Stream<String> -> IntStream
                               .toArray();  // IntStream -> int[]
 ```
+
+### 자바의 배열 인덱스 슬라이싱 
+```JAVA
+import java.util.Arrays;
+
+int[] ary = new int[]{1,2,3,4,5,6};
+// Arrays.copyOfRange(ary, start, end) ->   ary[start] 부터 ary[end-1] 까지 자름 
+int[] sliced = Arrays.copyOfRange(ary, 1,3); // ary[1]부터 ary[2]까지 즉 {2,3} 이 나옴 
+```
