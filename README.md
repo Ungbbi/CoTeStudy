@@ -50,3 +50,12 @@ PriorityQueue<Student> reversedPriorityQueue = new PriorityQueue<>(priorityQueue
 Exception in thread "main" java.lang.ClassCastException: Student cannot be cast to java.lang.Comparable
 
 ```
+
+### String[]  -> int[]
+```JAVA
+        String[] strArray = {"1", "2", "3", "4", "5"};
+        
+        int[] intArray = Arrays.stream(strArray)  // String[] -> Stream<String>
+                              .mapToInt(Integer::parseInt)  // Stream<String> -> IntStream
+                              .toArray();  // IntStream -> int[]
+```
