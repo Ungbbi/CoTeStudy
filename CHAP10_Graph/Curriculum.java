@@ -17,7 +17,7 @@ public class Curriculum {
     static List<List<Integer>> graph = new ArrayList<>();
 
     public static void topologySort(){
-        int[] result = time;
+        int[] result = time.clone();
         Queue<Integer> q = new LinkedList<>();
 
         for(int i=1; i<time.length;i++){
