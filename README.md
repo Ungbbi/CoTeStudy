@@ -87,3 +87,13 @@ import java.util.Collections;
 int[] n = new int[]{1,5,3,5,4,0};
 Arrays.sort(n, Comparator.reverseOreder());
 ```
+
+### 소수판별
+```JAVA
+// 소수판별하기 쉬운 방법 - 에라토스테네스의 체
+// 판별하려는 값 N이 2~N의 제곱근까지의 수들로 나눠지지 않는다면 소수.
+for(int i=0; i<Math.sqrt(n); i++){
+    if(n%i==0) return false;
+    }
+return true;
+```
