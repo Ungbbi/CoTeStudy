@@ -97,3 +97,24 @@ for(int i=0; i<Math.sqrt(n); i++){
     }
 return true;
 ```
+
+### 배열 / 리스트의 중복 제거
+```JAVA
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 2, 3, 4, 4, 5);
+        
+        // HashSet을 사용하여 중복 제거 -함
+        Set<Integer> uniqueNumbers = new HashSet<>(numbers);
+        // LinkedHashSet 사용 -> 순서 보장
+        Set<Integer> uniqueNumbers = new LinkedHashSet<>(numbers);
+
+        
+        // 중복이 제거된 결과 출력
+        System.out.println(new ArrayList<>(uniqueNumbers)); // [1, 2, 3, 4, 5]
+    }
+}
+
+```
