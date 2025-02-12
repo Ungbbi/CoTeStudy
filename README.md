@@ -118,3 +118,14 @@ public class Main {
 }
 
 ```
+
+### 리스트에서 특정 값에 해당하는 원소 제거
+```JAVA
+ArrayList<Integer> A = new ArrayList<>();
+// 대충 위 A에 원소들이 추가됐다고 하자.
+
+wires[1] = 2일 때
+A.remove(wires[1])  -> X  : remove(int x) 호출. 이 함수는 해당하는 인덱스를 찾아서 제거 -> 인덱스 에러 및 원하는 것에서 벗어날 수 있음
+A.remove(Integer.valueOf(wires[1])) -> O : remove(Object obj) 호출. 해당 값을 찾아서 제거 
+
+```
