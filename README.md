@@ -114,9 +114,16 @@ public class Main {
         Set<Integer> uniqueNumbers = new LinkedHashSet<>(numbers);
 
         // 2. int[] 의 경우 (int[] 은 Integer 형이 아니므로 변환해줘야함)
+        // 아래의 경우 반드시 import java.util.stream.Collectors; 해줘야함
+        import java.util.stream.Collectors;
         Set<Integer> s = Arrays.stream(nums)
                                 .boxed() // Integer로 변환
                                 .collect(Collectors.toSet());
+        // HashSet을 사용한 수동 변환
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            set.add(num);
+        }
 
         // 중복이 제거된 결과 출력
         System.out.println(new ArrayList<>(uniqueNumbers)); // [1, 2, 3, 4, 5]
