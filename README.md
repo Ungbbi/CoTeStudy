@@ -105,13 +105,19 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(1, 2, 2, 3, 4, 4, 5);
-        
-        // HashSet을 사용하여 중복 제거 -함
+        int[] nums = {1, 2, 2, 3, 4, 4, 5};
+        // 1. List<Integer>의 경우
+
+        // HashSet을 사용하여 중복 제거함 -> 순서 보장 X
         Set<Integer> uniqueNumbers = new HashSet<>(numbers);
         // LinkedHashSet 사용 -> 순서 보장
         Set<Integer> uniqueNumbers = new LinkedHashSet<>(numbers);
 
-        
+        // 2. int[] 의 경우 (int[] 은 Integer 형이 아니므로 변환해줘야함)
+        Set<Integer> s = Arrays.stream(nums)
+                                .boxed() // Integer로 변환
+                                .collect(Collectors.toSet());
+
         // 중복이 제거된 결과 출력
         System.out.println(new ArrayList<>(uniqueNumbers)); // [1, 2, 3, 4, 5]
     }
