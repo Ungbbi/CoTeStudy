@@ -84,7 +84,8 @@ int[] sliced = Arrays.copyOfRange(ary, 1,3); // ary[1]부터 ary[2]까지 즉 {2
 import java.util.Arrays;
 import java.util.Collections;
 
-int[] n = new int[]{1,5,3,5,4,0};
+int[] n = new int[]{1,5,3,5,4,0}; (X) // Integer를 기대하므로 int는 안된다.
+Integer[] n = {1,2,3,4,5,6}; (O) 
 Arrays.sort(n, Comparator.reverseOreder());
 ```
 
