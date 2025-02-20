@@ -24,12 +24,13 @@ FROM BOOK;
 -- %Y : xxxx 4자리,  %y : 2021이라면 21만 출력
 ```
 
-# TOP, ROWNUM
+# LIMIT, ROWNUM
 -- 상위 몇개를 출력하고 싶다.
 ### MYSQL
 ```MYSQL
-SELECT TOP 1 NAME
-FROM BOOK;
+SELECT NAME
+FROM BOOK
+LIMIT 10;
 ```
 ### ORACLE
 ```SQL
