@@ -22,6 +22,8 @@ SELECT DATE_FORMAT(BOOK_ID, '%Y-%m-%d') AS B
 FROM BOOK;
 
 -- %Y : xxxx 4자리,  %y : 2021이라면 21만 출력
+
+--DATE_FORMAT은 문자열, YEAR은 정수형
 ```
 
 # LIMIT, ROWNUM
