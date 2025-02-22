@@ -38,3 +38,16 @@ SELECT NAME
 FROM (SELECT * FROM BOOK ORDER BY DATETIME ASC)
 WHERE ROWNUM=1;
 ```
+
+# FORMAT()
+MySQL에서 컬럼 값을 특정 형식(예: 50.00cm)으로 출력하려면 FORMAT(), CONCAT(), CAST() 등을 사용할 수 있다.
+```MYSQL
+-- FORMAT
+SELECT FORMAT(length, 2) AS formatted_length FROM your_table;
+-- CONCAT - FORMAT
+SELECT CONCAT(FORMAT(length, 2), 'cm') AS formatted_length FROM your_table;
+-- CONCAT - CAST
+SELECT CONCAT(CAST(length AS DECIMAL(10,2)), 'cm') AS formatted_length FROM your_table;
+-- CONCAT - ROUND
+SELECT CONCAT(ROUND(length, 2), 'cm') AS formatted_length FROM your_table;
+```
