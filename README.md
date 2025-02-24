@@ -70,6 +70,18 @@ for (int i=0; i<n.length; i++){
 }
 ```
 
+### ArrayList -> String[]
+```JAVA
+ArrayList<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Cherry");
+
+        // ArrayList를 String[]로 변환
+        String[] array = list.toArray(new String[0]);
+```
+- `new String[0]` 이 부분이 핵심.
+
 ### 자바의 배열 인덱스 슬라이싱 
 ```JAVA
 import java.util.Arrays;
