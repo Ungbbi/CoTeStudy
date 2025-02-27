@@ -155,3 +155,10 @@ A.remove(wires[1])  -> X  : remove(int x) 호출. 이 함수는 해당하는 인
 A.remove(Integer.valueOf(wires[1])) -> O : remove(Object obj) 호출. 해당 값을 찾아서 제거 
 
 ```
+
+### Queue 배열
+```JAVA
+Queue<Integer>[] q = new LinkedList[2];
+q[0] = new LinkedList<>();
+q[1] = new LinkedList<>();
+```
