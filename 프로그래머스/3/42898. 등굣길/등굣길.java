@@ -9,7 +9,7 @@ import java.util.*;
 
 class Solution {
     // 오른쪽과 아래로만 이동하므로 visited는 필요 없다.
-    
+
     // puddles : 물에 잠긴 지역 (0~10)
     public int solution(int m, int n, int[][] puddles) {
         int[][] dp = new int[n+1][m+1];
@@ -17,7 +17,6 @@ class Solution {
         for(int[] p : puddles){
                 dp[p[1]][p[0]] = -1;            
         }
-        
         dp[1][1] = 1;
         
         for(int i=1; i<=n; i++){
@@ -27,15 +26,17 @@ class Solution {
                     continue;
                 }
                 if(i==1 && j==1) continue;
-                else if(i==1 && j>1) dp[1][j] = dp[1][j-1]%1000000007;
-                else if (j==1 && i>1) dp[i][1] = dp[i-1][j]%1000000007;
+                else if(i==1 && j>1) dp[1][j] = dp[1][j-1];
+                else if (j==1 && i>1) dp[i][1] = dp[i-1][j];
                 else{
-                    dp[i][j] = (dp[i-1][j] + dp[i][j-1])%1000000007;
+                    dp[i][j] = dp[i-1][j] + dp[i][j-1];
                 }
             }
         }
-        return dp[n][m];
+        
 
+        int ans = dp[n][m] % 1000000007;
+        return ans;
     }
 }
 

@@ -1,6 +1,6 @@
 # [level 3] 등굣길 - 42898 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42898#qna) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42898#) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2025년 02월 28일 17:41:36
+2025년 02월 28일 17:42:10
 
 ### 문제 설명
 
