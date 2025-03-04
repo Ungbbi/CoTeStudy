@@ -139,31 +139,4 @@ public class Main {
         }
 
         // 중복이 제거된 결과 출력
-        System.out.println(new ArrayList<>(uniqueNumbers)); // [1, 2, 3, 4, 5]
-    }
-}
-
-```
-
-### 리스트에서 특정 값에 해당하는 원소 제거
-```JAVA
-ArrayList<Integer> A = new ArrayList<>();
-// 대충 위 A에 원소들이 추가됐다고 하자.
-
-wires[1] = 2일 때
-A.remove(wires[1])  -> X  : remove(int x) 호출. 이 함수는 해당하는 인덱스를 찾아서 제거 -> 인덱스 에러 및 원하는 것에서 벗어날 수 있음
-A.remove(Integer.valueOf(wires[1])) -> O : remove(Object obj) 호출. 해당 값을 찾아서 제거 
-
-```
-
-### Queue 배열
-```JAVA
-Queue<Integer>[] q = new LinkedList[2];
-q[0] = new LinkedList<>();
-q[1] = new LinkedList<>();
-```
-
-### 모듈러 연산 분배법칙
-| 결괏값이 매우 큰 값에 대하여 모듈러(나머지) 연산을 수행할 경우 오버플로우 혹은 많은 시간이 소모된다. 
-|그렇기에 결괏값을 도출해내기 위한 연산 수행 과정에서 모듈러 연산을 적용하여야 한다.
-
+        System.out.println(new ArrayL닝
