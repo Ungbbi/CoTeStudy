@@ -81,7 +81,16 @@ ArrayList<String> list = new ArrayList<>();
         String[] array = list.toArray(new String[0]);
 ```
 - `new String[0]` 이 부분이 핵심.
+### ArrayList -> int[]
+```JAVA
+ArrayList<Integer> list = new ArrayList<>();
+list.add(1);
+list.add(2);
 
+// list -> int[]
+int[] a ;
+a = list.stream().mapToInt(Integer::intValue).toArray();
+```
 ### 자바의 배열 인덱스 슬라이싱 
 ```JAVA
 import java.util.Arrays;
