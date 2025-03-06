@@ -53,3 +53,13 @@ SELECT CONCAT(CAST(length AS DECIMAL(10,2)), 'cm') AS formatted_length FROM your
 -- CONCAT - ROUND
 SELECT CONCAT(ROUND(length, 2), 'cm') AS formatted_length FROM your_table;
 ```
+
+# 주의
+### ORDER BY
+- `SELECT` 에서 `CONCAT`을 사용한 컬럼을 기준으로 정렬할 때, `CONCAT`에 의해 문자열로 타입이 변경되어 문자열 기준으로 정렬됨.
+```SQL
+SELECT CONCAT(SUM(DISTANCE), "km") AS TOTAL_DIS
+FROM map
+-- ORDER BY TOTAL_DIS (X)
+ORDER BY SUM(DISTANCE);
+```
