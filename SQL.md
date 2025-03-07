@@ -62,10 +62,18 @@ SELECT DATE_FORMAT(month,'%m') + 0 AS MONTH_TO
 
 # 주의
 ### ORDER BY
-- `SELECT` 에서 `CONCAT`을 사용한 컬럼을 기준으로 정렬할 때, `CONCAT`에 의해 문자열로 타입이 변경되어 문자열 기준으로 정렬됨.
+#### `SELECT` 에서 `CONCAT`을 사용한 컬럼을 기준으로 정렬할 때, `CONCAT`에 의해 문자열로 타입이 변경되어 문자열 기준으로 정렬됨.
 ```SQL
 SELECT CONCAT(SUM(DISTANCE), "km") AS TOTAL_DIS
 FROM map
 -- ORDER BY TOTAL_DIS (X)
 ORDER BY SUM(DISTANCE);
 ```
+
+#### 정렬에 들어가야 하는 값은 칼럼의 명칭이다.  따옴표로 감싸게 되면 기본 설정에서는 칼럼명이 아닌 문자열 값으로 받아들여 의미가 없는 정렬이 된다.
+```SQL
+SELECT COUNT(*) AS '5월예약건수'
+FROM RESERVATION
+-- ORDER BY '5월예약건수' ; (X) <- 틀림
+ORDER BY 5월예약건수 ; 
+
