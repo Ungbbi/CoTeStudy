@@ -2,15 +2,14 @@ import java.util.*;
 
 class Solution {
     public int numberOfAlternatingGroups(int[] colors, int k) {
-        int ruletIndex = colors.length;
         int prevColor = colors[0];
         int groupCnt = 0;
         int tileCnt = 1;
-        int right = 0 ;
+        int right = 1 ;
         int left = 0;
         while(left<colors.length){
-            if(prevColor != colors[right%colors.length]){
-                prevColor = colors[right%colors.length];
+            if(colors[(right-1)%colors.length] != colors[right%colors.length]) 
+            {                
                 tileCnt++;
                 if(tileCnt==k){
                     groupCnt++;
