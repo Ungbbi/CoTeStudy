@@ -32,7 +32,7 @@ public class Main{
                 int nz = z+dz[i];
                 // 경계 밖
                 if(nx<0 || nx>=N || ny<0 || ny>=M || nz<0 || nz>=H) continue;
-                // 이미 익
+                // 맨 처음에 주어진 익힌 토마토가 아니라 방문을 통해 익어진 토마토는 패스
                 if(visited[nz][ny][nx]>=1 || visited[nz][ny][nx] == -1) continue;
                 queue.add(new int[]{nz,ny,nx,day+1});
             }
