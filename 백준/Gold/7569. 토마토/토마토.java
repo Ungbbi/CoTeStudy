@@ -22,7 +22,7 @@ public class Main{
             y = now[1];
             x = now[2];
             day = now[3];
-            //TODO 고려해야함. 처음에 넣었을 때 익은걸 큐에 넣으니 바로 pass 됨
+            // 처음부터 익어있던 토마토가 아니라 방문을 통해 익게된 토마토는 pass
             if(visited[z][y][x]>0 && map[z][y][x]!=1) continue;
             visited[z][y][x] = day;
 
@@ -32,7 +32,7 @@ public class Main{
                 int nz = z+dz[i];
                 // 경계 밖
                 if(nx<0 || nx>=N || ny<0 || ny>=M || nz<0 || nz>=H) continue;
-                // 맨 처음에 주어진 익힌 토마토가 아니라 방문을 통해 익어진 토마토는 패스
+                // 이미 방문한 곳이거나 토마토가 없으면 pass
                 if(visited[nz][ny][nx]>=1 || visited[nz][ny][nx] == -1) continue;
                 queue.add(new int[]{nz,ny,nx,day+1});
             }
