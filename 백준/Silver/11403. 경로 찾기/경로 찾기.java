@@ -7,15 +7,15 @@ public class Main {
 
     static void bfs(int origin, int N){
         Queue<Integer> q  = new LinkedList<>();
-        boolean[][] visited = new boolean[N][N];
+        boolean[] visited = new boolean[N];
 
         q.add(origin);
         while(!q.isEmpty()){
             int n = q.poll();
             for(int i=0; i<N; i++){
-                if(map[n][i]==1 && !visited[n][i]) {
+                if(map[n][i]==1 && !visited[i]) {
                     q.add(i);
-                    visited[n][i] = true;
+                    visited[i] = true;
                     result[origin][i] = 1;
                 }
             }
@@ -41,11 +41,13 @@ public class Main {
             bfs(i, N);
         }
 
-        for(int i=0; i<N; i++){
-            for(int j=0; j<N; j++){
-                System.out.printf("%d ",result[i][j]);
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                sb.append(result[i][j]).append(" ");
             }
-            System.out.println();
+            sb.append("\n");
         }
+        System.out.print(sb);
     }
 }
