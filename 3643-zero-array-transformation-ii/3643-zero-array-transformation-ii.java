@@ -1,37 +1,59 @@
+import java.util.Arrays;
+
 class Solution {
-    // 생각해야될 것 : 언제 반복을 멈출 수 있을까? 전체 배열이 0인것을 도중에 어떻게 체크?
-    public static int minZeroArray(int[] nums, int[][] queries) {
+	public int minZeroArray(int[] nums, int[][] queries) {
 
-        int cnt = 0;
-        int[] ary = new int[nums.length];
-        int aryCnt = 0;
+		int n = nums.length;
 
-        for(int i=0; i<nums.length; i++){
-            ary[i] = nums[i];
-            if(ary[i]!=0){
-                aryCnt += nums[i];
-            }                    
-        }
+		int l = 0;
+		int r = queries.length;
+		int result = -1;
 
-        for(int[] q : queries){
-            if(aryCnt==0) break;
-            for(int i = q[0]; i<=q[1]; i++){
-                if(nums[i] == 0) continue;
-                if(nums[i]<=q[2]){
-                    aryCnt -= nums[i];
-                    nums[i] = 0;
-                }
-                else {
-                    nums[i] -= q[2];
-                    aryCnt -= q[2];
-                }                
-            }
-            // 하나의 쿼리로 연산이 끝났을 때 cnt++
-            // nums = [0]이라면?
-            cnt++;
-            // 어느 특정 원소가 0이 됐을 때, -1?
-        }
-        if(aryCnt>0) return -1;
-        return cnt;
-    }
+		while(l <= r){
+			int mid = (l + r)/2 ;
+			int[] arr = Arrays.copyOf(nums,n);
+			boolean value = prefixSum(arr,queries,mid);
+			// 0보다 큰거 있음
+			if(!value){
+				l = mid + 1;
+			}else{
+				r = mid - 1;
+				result = mid;
+			}
+		}
+
+		return result;
+	}
+
+	public boolean prefixSum(int[] nums, int[][] queries, int mid){
+		int[] sum = new int[nums.length + 1];
+		int[] prefixSum = new int[nums.length + 1];
+		for(int i=0; i< mid; i++){
+			int l = queries[i][0];
+			int r = queries[i][1];
+			int value = queries[i][2];
+			sum[l] += value;
+			sum[r + 1] -= value;
+		}
+
+		for(int i =1; i< prefixSum.length; i++){
+			prefixSum[i] = sum[i-1] + prefixSum[i-1];
+		}
+
+
+		for(int i =0 ; i< nums.length; i++){
+			nums[i] -= prefixSum[i + 1];
+		}
+
+		return allZero(nums);
+	}
+
+	public boolean allZero(int[] nums) {
+		for (int num : nums) {
+			if (num > 0) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
