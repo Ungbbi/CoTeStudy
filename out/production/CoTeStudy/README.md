@@ -59,3 +59,41 @@ Exception in thread "main" java.lang.ClassCastException: Student cannot be cast 
                               .mapToInt(Integer::parseInt)  // Stream<String> -> IntStream
                               .toArray();  // IntStream -> int[]
 ```
+
+### int[] -> String[]
+```JAVA
+int[] n = new int[] {1,2,3,5,1,7,2,10};
+String[] s = new String[n.length];
+
+for (int i=0; i<n.length; i++){
+    s[i] = String.valueOf(n[i]);
+}
+```
+
+### 자바의 배열 인덱스 슬라이싱 
+```JAVA
+import java.util.Arrays;
+
+int[] ary = new int[]{1,2,3,4,5,6};
+// Arrays.copyOfRange(ary, start, end) ->   ary[start] 부터 ary[end-1] 까지 자름 
+int[] sliced = Arrays.copyOfRange(ary, 1,3); // ary[1]부터 ary[2]까지 즉 {2,3} 이 나옴 
+```
+
+### 정렬 내림차순
+```JAVA
+import java.util.Arrays;
+import java.util.Collections;
+
+int[] n = new int[]{1,5,3,5,4,0};
+Arrays.sort(n, Comparator.reverseOreder());
+```
+
+### 소수판별
+```JAVA
+// 소수판별하기 쉬운 방법 - 에라토스테네스의 체
+// 판별하려는 값 N이 2~N의 제곱근까지의 수들로 나눠지지 않는다면 소수.
+for(int i=0; i<Math.sqrt(n); i++){
+    if(n%i==0) return false;
+    }
+return true;
+```
