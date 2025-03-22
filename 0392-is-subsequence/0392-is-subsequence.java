@@ -1,17 +1,19 @@
 class Solution {
-    public boolean isSubsequence(String s, String t) {        
-        String[] ns = s.split("");
-        String[] nt = t.split("");
-        int k=0, nsCnt = s.length();
+    public boolean isSubsequence(String s, String t) {            
+        int slen = s.length();
+        int tlen = t.length();    
 
-        for(int i=0; i<t.length(); i++){
-            if(nt[i].equals(ns[k])){
-                nsCnt--;
-                k++;
+        if(slen>tlen) return false;
+
+        int si=0, ti=0;
+        while(si<slen && ti<tlen){
+            if(s.charAt(si) == t.charAt(ti)){
+                si++;
+                ti++;
             }
-            if(nsCnt==0) return true;
+            else ti++;
         }
-        if(nsCnt==0) return true;
+        if(si==slen) return true;
         return false;
     }
 }
