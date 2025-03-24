@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-//  좌표 정렬
+// 몇몇 변수들은 long 타입인데 이는 문제에서 주어지는 데이터 범위를 만족시키기 위해서다.
 
 public class Main{
 
