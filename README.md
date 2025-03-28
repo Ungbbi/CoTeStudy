@@ -111,13 +111,26 @@ Arrays.sort(n, Comparator.reverseOreder());
 ```
 
 ### 소수판별
+-  **소수판별하기 쉬운 방법 - 에라토스테네스의 체**
+-  판별하려는 값 N이 2~N의 제곱근까지의 수들로 나눠지지 않는다면 소수.
 ```JAVA
-// 소수판별하기 쉬운 방법 - 에라토스테네스의 체
-// 판별하려는 값 N이 2~N의 제곱근까지의 수들로 나눠지지 않는다면 소수.
-for(int i=0; i<Math.sqrt(n); i++){
-    if(n%i==0) return false;
-    }
-return true;
+// static 배열로 미리 만들어놓고 나중에 인덱스로 한 번에 접근하는 방법 - 소수 찾기를 여러번 수행해야 할 때
+int N = 3000;
+static int[] prime = new int[N];
+for(int i=2; i<N; i++){
+    for(int j=i; j<N; j += i){
+        prime[j]++;
+}
+if(prime[x]==1) return true;
+/*
+  i 0 1 2 3 4 5 6 7 8 9 10 11
+j
+2       1   1   1
+3         1     1
+4           1       1
+5             1          1
+*/
+
 ```
 
 ### 배열 / 리스트의 중복 제거
