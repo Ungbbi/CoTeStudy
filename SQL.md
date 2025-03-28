@@ -76,4 +76,13 @@ SELECT COUNT(*) AS '5월예약건수'
 FROM RESERVATION
 -- ORDER BY '5월예약건수' ; (X) <- 틀림
 ORDER BY 5월예약건수 ; 
+```
 
+# DATEDIFF
+기간 구하기 
+```MYSQL
+DATEDIFF(END_DATE, START_DATE)
+-- 이 때, 고려해야 할 것이 있다.
+-- 2021-02-21 과 2021-02-24은 하루차이다.
+-- '사용 기간' 을 구해야 할 경우에는 +1 을 해주어야 함
+```
