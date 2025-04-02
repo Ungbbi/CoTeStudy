@@ -160,5 +160,3 @@ public class Main {
             set.add(num);
         }
 
-        // 중복이 제거된 결과 출력
-        System.out.println(new ArrayL닝
